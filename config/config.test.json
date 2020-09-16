@@ -12,9 +12,5 @@
 		"password": "1262e49d6fbfac7fc5fc",
 		"port": 5432
 	},
-	"db-in-use": "psql",
-	"here_map": {
-		"geo_url": "/tests/mocks/geocode.json",
-		"api_key": ""
-	}
+	"db-in-use": "psql"
 }
