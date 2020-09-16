@@ -1,0 +1,20 @@
+﻿{
+	"mssql-config": {
+		"user": "sa",
+		"password": "1262e49d6fbfac7fc5fc",
+		"server": "db",
+		"database": "Parking"
+	},
+	"psql-config": {
+		"user": "bvpdpycwuxjezr",
+		"host": "ec2-54-246-115-40.eu-west-1.compute.amazonaws.com",
+		"database": "d281hj4hvq2ek6",
+		"password": "4623e29e6ee0853a98a4cf3f40c7e945577d93aaec189410ca589b371eeeca78b0007a47140316beb5146b0fe3ff0c9dcb129ff882140eb585cd7cfb34874bf5",
+		"port": 5432
+	},
+	"db-in-use": "psql",
+	"here_map": {
+		"geo_url": "https://geocoder.ls.hereapi.com/6.2/geocode.json",
+		"api_key": "155cb9d517f68841eef89b6778be9317491fdd8efb2bce57f252d05c33c89f14f0504f47317b22bbe7462a"
+	}
+}

@@ -1,0 +1,28 @@
+node_modules
+bin
+obj
+*.txt
+Scripts
+.vscode
+*.js.map
+package-lock.json
+
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
+dist/**/*
+
+# Ignore mongo data
+data
