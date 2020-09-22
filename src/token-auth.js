@@ -1,10 +1,6 @@
-// const jwt = require('jsonwebtoken');
 const cipher = require('./cipher');
-// const config = require('./config');
 
 const sign = function(payload, expiresIn) { // expiresIn - in seconds 
-    // const token = jwt.sign(payload, config.secret, expiredAt);
-
     const pl = JSON.parse(JSON.stringify(payload));
     pl.expiresIn = Math.floor((Date.now() / 1000) + expiresIn);
     const token = cipher.encrypt(JSON.stringify(pl));
