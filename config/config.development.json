@@ -9,7 +9,7 @@
 		"user": "postgres",
 		"host": "172.18.0.15",
 		"database": "Parking",
-		"password": "1262e49d6fbfac7fc5fc",
+		"password": "02cae35595cac2165bcb1d2eff5e12ca:ac63d21dc522fd06336c53a475a9dde1",
 		"port": 5432
 	},
 	"db-in-use": "psql"
