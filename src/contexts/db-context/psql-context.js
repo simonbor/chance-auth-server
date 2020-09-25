@@ -1,7 +1,21 @@
 'use strict';
 const connect = require('../../connect');
 
-module.exports = class MssqlContext {
+module.exports = class PsqlContext {
+    async query(sql, values) {
+        const pool = await connect.getPool('psql');
+
+        let res;
+        try {
+            res = await pool.query(sql, values);
+        } catch (err) {
+            console.error(`Error: ${err.message}`);
+        }
+
+        pool.end();
+        return res.rows[0];
+    }
+
     async execute(procedureName, request) {
         const pool = await connect.getPool('psql');
 
