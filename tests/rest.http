@@ -1,0 +1,15 @@
+# @ENV = https://chance-app.herokuapp.com
+@ENV = http://localhost:8080
+
+###
+post {{ENV}}/register HTTP/1.1
+content-type: application/json
+
+{
+	"User": {
+		"FirstName": "טסט",
+		"Email": "s@s.com",
+		"MobileNum": "0544777601",
+		"Password": "1234qwer"
+    }
+}
