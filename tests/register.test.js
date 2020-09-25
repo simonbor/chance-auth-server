@@ -1,8 +1,8 @@
 'use strict'
-// const addressController = require('../src/controllers/addressController');
-// const DbContext = require('../src/dal/dal-context/dbContext')
+const DbContext = require('../src/contexts/db-context/db-context');
+const registerController = require('../src/controllers/register.controller');
 
-describe('location controller tests', () => {
+describe('register controller tests block', () => {
   const mockRequest = () => {
     const req = {};
     req.body = jest.fn().mockReturnValue(req);
@@ -18,32 +18,27 @@ describe('location controller tests', () => {
   };
   const req = mockRequest();
 
-  beforeAll(async (done) => {
-    // init database (mssql, postgres)
+  beforeAll(async () => {
+    // init database
     DbContext.initContext();
-
-    // wait for db recreation
-    // setTimeout(function() {done()}, DB_RECREATE_DELAY);
   });
   beforeEach(async () => {
-    // req.body = {
-    //   "Address": {
-    //     "CityId": 1,
-    //     "CountryId": 367,
-    //     "Building": 1
-    //   }
-    // }
+    req.body.User = {}
   });
 
-  test('test address read - empty address use case', async () => {
+  test('test register use case', async () => {
     const res = mockResponse();
+    const mobileNum = Array.from({length: 10}, () => Math.floor(Math.random() * 9)).join('');
 
-    req.body.Address.StreetName = 'Bograshov';
+    req.body.User.FirstName = "זהב";
+    req.body.User.Email = 'test@test.com';
+    req.body.User.MobileNum = mobileNum;
+    req.body.User.Password = '1234qwer';
 
-    const address = await addressController.addressGet(req, res);
-    expect(address.AddressId === undefined).toBeTruthy()
+    const response = await registerController.register(req, res);
+
     expect(res.statusCode).toEqual(200);
-    expect(typeof address).toBe('object');
+    expect(typeof response).toBe('object');
+    expect(response.user.UserId > 0).toBeTruthy()
   });
-
 });
