@@ -1,6 +1,6 @@
 'use strict';
 const http = require('http');
-const DbContext = require('./dal/dal-context/dbContext');
+const DbContext = require('./contexts/db-context/db-context');
 
 const host = '0.0.0.0';
 const port = process.env.PORT || 8080;
