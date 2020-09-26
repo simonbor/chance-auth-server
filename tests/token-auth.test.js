@@ -1,7 +1,7 @@
 'use strict'
 const tokenAuth = require('../src/token-auth');
 
-describe.skip('token authentication module test', () => {
+describe('token authentication module test', () => {
     const payload = { userId: 1, role: 1};
 
     test('token sign test', () => {
