@@ -9,7 +9,7 @@ content-type: application/json
 	"User": {
 		"FirstName": "טסט",
 		"Email": "s@s.com",
-		"MobileNum": "0544777604",
+		"MobileNum": "0544777606",
 		"Password": "1234qwer"
     }
 }

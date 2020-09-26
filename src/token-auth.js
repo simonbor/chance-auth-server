@@ -13,6 +13,7 @@ const verify = function(token) {
     const now = Math.floor(Date.now() / 1000);
 
     if(payload.expiresIn && now > payload.expiresIn) {
+        process.env.NODE_ENV && process.env.NODE_ENV != 'test' &&
         console.error('Error: token expired');
         return;
     }
