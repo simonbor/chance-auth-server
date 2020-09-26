@@ -1,6 +1,6 @@
 const url = require('url');
 const { parse } = require('querystring');
-const registerController = require('./controllers/register.controller')
+const authController = require('./controllers/auth.controller')
 
 function collectRequestDataAsync(request) {    
     const FORM_URLENCODED = 'application/x-www-form-urlencoded';
@@ -28,11 +28,11 @@ const route = async function(req, res) {
     }
 
     if (reqUrl.pathname == '/register' && req.method === 'POST') {
-        return await registerController.register(req, res);
+        return await authController.register(req, res);
     }
 
     if (reqUrl.pathname == '/login' && req.method === 'POST') {
-        return await loginController.driverGet(req, res);
+        return await authController.login(req, res);
 
     } else {
         res.statusCode = 404;
