@@ -6,15 +6,24 @@ const cipher = require('../cipher');
 
 const register = async function(req, res) {
     const user = await userDal.insert(req.body.User, roles.User);
-    const {Password, ...userWithoutPassword} = user;
-    const {LastName, FirstName, ...fieldsForEncryption} = user;
-    const encryptedUserFields = tokenAuth.sign(fieldsForEncryption, 60 * 5);
 
-    res.statusCode = 200;
+    if(user.UserId > 0) {
+        const {Password, ...userWithoutPassword} = user;
+        const {LastName, FirstName, ...fieldsForEncryption} = user;
+        const encryptedUserFields = tokenAuth.sign(fieldsForEncryption, 60 * 5);
+
+        res.statusCode = 200;
+        return { 
+            auth: true, 
+            token: encryptedUserFields, 
+            user: userWithoutPassword
+        };
+    }
+
+    res.statusCode = 404;
     return { 
-        auth: true, 
-        token: encryptedUserFields, 
-        user: userWithoutPassword
+        auth: false,
+        message: 'The user already exists'
     };
 }
 

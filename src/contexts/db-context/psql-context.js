@@ -9,7 +9,11 @@ module.exports = class PsqlContext {
         try {
             res = await pool.query(sql, values);
         } catch (err) {
+            process.env.NODE_ENV && process.env.NODE_ENV != 'test' &&
             console.error(`Error: ${err.message}`);
+
+            pool.end();
+            return;
         }
 
         pool.end();

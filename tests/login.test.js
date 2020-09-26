@@ -10,9 +10,9 @@ describe('login controller tests block', () => {
     }; 
     const mockResponse = () => {
         const res = {}
-        res.send = jest.fn().mockReturnValue(res)
-        res.statusCode = jest.fn().mockReturnValue(res)
-        res.json = jest.fn().mockReturnValue(res)
+        res.send = jest.fn().mockReturnValue(res);
+        res.statusCode = jest.fn().mockReturnValue(res);
+        res.json = jest.fn().mockReturnValue(res);
         return res;
     };
     const req = mockRequest();
