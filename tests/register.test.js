@@ -1,6 +1,6 @@
 'use strict'
 const DbContext = require('../src/contexts/db-context/db-context');
-const registerController = require('../src/controllers/register.controller');
+const registerController = require('../src/controllers/auth.controller');
 
 describe('register controller tests block', () => {
   const mockRequest = () => {
