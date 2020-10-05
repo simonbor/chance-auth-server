@@ -1,3 +1,3 @@
-const roles = Object.freeze({ Admin: 1, Managed: 5, User: 9 });
+const roles = Object.freeze({ Admin: 1, Manager: 5, User: 9 });
 
 module.exports = { roles }
