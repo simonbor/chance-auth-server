@@ -1,5 +1,5 @@
 'use strict';
-const tokenAuth = require('../token-auth');
+const tokenAuth = require('../auth-token');
 const userDal = require('../dal/user.dal');
 const { roles } = require('../enums');
 const cipher = require('../cipher');
@@ -32,7 +32,7 @@ const login = async function(req, res) {
 
     if(user.Password && (req.body.User.Password === cipher.decrypt(user.Password))) {
         const {Password, ...userWithoutPassword} = user;
-        const {LastName, FirstName, ...fieldsForEncryption} = user;
+        const {LastName, FirstName, ...fieldsForEncryption} = req.body.User;
         const encryptedUserFields = tokenAuth.sign(fieldsForEncryption, 60 * 5);
 
         res.statusCode = 200;

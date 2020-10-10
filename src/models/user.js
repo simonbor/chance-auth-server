@@ -1,7 +1,7 @@
 'use strict';
 
 class User {
-	constructor({UserId, RoleId, Email, Password, FirstName, LastName, MobileNum, Updated, Created}) {
+	constructor({UserId, RoleId, Email, Password, FirstName, LastName, MobileNum}) {
         this.UserId =       UserId;
         this.RoleId =       RoleId;
         this.MobileNum =    MobileNum;
