@@ -1,5 +1,5 @@
 # @ENV = https://chance-app.herokuapp.com
-@ENV = http://localhost:8080
+@ENV = http://localhost:3000
 
 ### register
 post {{ENV}}/register HTTP/1.1

@@ -3,7 +3,7 @@ const http = require('http');
 const DbContext = require('./contexts/db-context/db-context');
 
 const host = '0.0.0.0';
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 const router = require('./router');
 const server = http.createServer();
