@@ -1,7 +1,11 @@
 {
   "name": "chance-auth-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chance auth server",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simonbor/chance-auth-server.git"
+  },
   "main": "server.js",
   "scripts": {
     "start": "nodemon src/server",
