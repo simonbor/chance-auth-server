@@ -9,7 +9,7 @@ const register = async function(req, res) {
 
     if(user.UserId > 0) {
         const {Password, ...userWithoutPassword} = user;
-        const {LastName, FirstName, ...fieldsForEncryption} = user;
+        const {LastName, FirstName, ...fieldsForEncryption} = req.body.User;
         const encryptedUserFields = tokenAuth.sign(fieldsForEncryption, 60 * 5);
 
         res.statusCode = 200;

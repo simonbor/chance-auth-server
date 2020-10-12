@@ -10,7 +10,8 @@
 		"host": "ec2-54-246-115-40.eu-west-1.compute.amazonaws.com",
 		"database": "d281hj4hvq2ek6",
 		"password": "d1e9e56745e3809effdc23f242b1b543:05b9799e09ce2c4f172d2cc879b4fb7e3ac2f2bccf185a72944aef447ec478bb3b485a75b14b54ee2c6020bfd1b7894f120740ec34b0fc64d4dea46530d5075a139c81079a774488113afa7a9a847702",
-		"port": 5432
+		"port": 5432,
+		"extra": { "ssl": true }
 	},
 	"db-in-use": "psql"
 }
