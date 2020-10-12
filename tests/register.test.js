@@ -54,7 +54,7 @@ describe('register controller tests block', () => {
     await registerController.register(req, res);
     const response = await registerController.register(req, res);
 
-    expect(res.statusCode).toEqual(404);
+    expect(res.statusCode).toEqual(500);
     expect(typeof response).toBe('object');
     expect(response.auth).toBeFalsy()
   });

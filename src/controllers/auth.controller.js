@@ -20,10 +20,10 @@ const register = async function(req, res) {
         };
     }
 
-    res.statusCode = 404;
+    res.statusCode = 500;
     return { 
         auth: false,
-        message: 'The user already exists'
+        message: 'Error occurred while registration'
     };
 }
 
