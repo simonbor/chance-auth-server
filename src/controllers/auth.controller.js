@@ -12,6 +12,7 @@ const register = async function(req, res) {
         const {LastName, FirstName, ...fieldsForEncryption} = req.body.User;
         const encryptedUserFields = tokenAuth.sign(fieldsForEncryption, 60 * 5);
 
+        console.info(`Info: New user ${FirstName} ${LastName} successfully registered;`);
         res.statusCode = 200;
         return { 
             auth: true, 
@@ -20,10 +21,11 @@ const register = async function(req, res) {
         };
     }
 
+    console.error(`Error: Error ocurred while registration;`);
     res.statusCode = 500;
     return { 
         auth: false,
-        message: 'Error occurred while registration'
+        message: 'Error: Error occurred while registration'
     };
 }
 
@@ -35,6 +37,7 @@ const login = async function(req, res) {
         const {LastName, FirstName, ...fieldsForEncryption} = req.body.User;
         const encryptedUserFields = tokenAuth.sign(fieldsForEncryption, 60 * 5);
 
+        console.info(`Info: User ${FirstName} ${LastName} successfully logged in;`);
         res.statusCode = 200;
         return { 
             auth: true,
@@ -43,10 +46,11 @@ const login = async function(req, res) {
         };
     }
 
+    console.error(`Error: Username or password is incorrect;`);
     res.statusCode = 400;
     return { 
         auth: false,
-        message: 'Username or password is incorrect'
+        message: 'Error: Username or password is incorrect'
     };
 }
 
