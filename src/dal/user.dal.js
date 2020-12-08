@@ -6,9 +6,9 @@ const { User } = require('../models/user');
 const insert = async function(user, role) {
     const dbContext = new DbContext();
     const userData = await dbContext.query(`
-        insert into auth."User" ("RoleId", "Email", "Password", "FirstName", "MobileNum") 
-        values ($1,$2,$3,$4,$5) 
-        returning *;`, [ role, user.Email, cipher.encrypt(user.Password), user.FirstName, user.MobileNum ]);
+        insert into auth."User" ("RoleId", "Email", "Password", "FirstName", "LastName", "MobileNum") 
+        values ($1,$2,$3,$4,$5,$6) 
+        returning *;`, [ role, user.Email, cipher.encrypt(user.Password), user.FirstName, user.LastName, user.MobileNum ]);
 
     return new User(userData || {});
 }
