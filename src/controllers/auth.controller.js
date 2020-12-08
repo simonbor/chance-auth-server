@@ -37,7 +37,7 @@ const login = async function(req, res) {
         const {LastName, FirstName, ...fieldsForEncryption} = req.body.User;
         const encryptedUserFields = tokenAuth.sign(fieldsForEncryption, 60 * 5);
 
-        console.info(`Info: User ${FirstName} ${LastName} successfully logged in;`);
+        console.info(`Info: User ${user.FirstName} ${user.LastName} successfully logged in;`);
         res.statusCode = 200;
         return { 
             auth: true,
