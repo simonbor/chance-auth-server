@@ -12,6 +12,7 @@ const register = async function(req, res) {
         const {LastName, FirstName, ...fieldsForEncryption} = req.body.User;
         const encryptedUserFields = tokenAuth.sign(fieldsForEncryption, 60 * 5);
 
+        process.env.NODE_ENV && process.env.NODE_ENV != 'test' &&
         console.info(`Info: New user ${FirstName} ${LastName} successfully registered;`);
         res.statusCode = 200;
         return { 
@@ -21,6 +22,7 @@ const register = async function(req, res) {
         };
     }
 
+    process.env.NODE_ENV && process.env.NODE_ENV != 'test' &&
     console.error(`Error: Error ocurred while registration;`);
     res.statusCode = 500;
     return { 
@@ -37,6 +39,7 @@ const login = async function(req, res) {
         const {LastName, FirstName, ...fieldsForEncryption} = req.body.User;
         const encryptedUserFields = tokenAuth.sign(fieldsForEncryption, 60 * 5);
 
+        process.env.NODE_ENV && process.env.NODE_ENV != 'test' &&
         console.info(`Info: User ${user.FirstName} ${user.LastName} successfully logged in;`);
         res.statusCode = 200;
         return { 
@@ -46,6 +49,7 @@ const login = async function(req, res) {
         };
     }
 
+    process.env.NODE_ENV && process.env.NODE_ENV != 'test' &&
     console.error(`Error: Username or password is incorrect;`);
     res.statusCode = 400;
     return { 
