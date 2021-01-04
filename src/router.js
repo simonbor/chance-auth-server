@@ -29,10 +29,12 @@ const route = async function(req, res) {
 
     if (reqUrl.pathname == '/register' && req.method === 'POST') {
         return await authController.register(req, res);
-    }
 
-    if (reqUrl.pathname == '/login' && req.method === 'POST') {
+    } else if (reqUrl.pathname == '/login' && req.method === 'POST') {
         return await authController.login(req, res);
+
+    } else if (reqUrl.pathname == '/wakeup' && req.method === 'GET') {
+        return { data: [], statusCode: 200, statusText: 'Ready' };
 
     } else {
         res.statusCode = 404;

@@ -1,6 +1,12 @@
 # @ENV = https://chance-app.herokuapp.com
 @ENV = http://localhost:3000
 
+### chance test
+get {{ENV}}/ HTTP/1.1
+
+### chance wake up
+get {{ENV}}/wakeup HTTP/1.1
+
 ### register
 post {{ENV}}/register HTTP/1.1
 content-type: application/json
