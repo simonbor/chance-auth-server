@@ -7,7 +7,7 @@
 	},
 	"psql-config": {
 		"user": "bvpdpycwuxjezr",
-		"host": "ec2-54-246-115-40.eu-west-1.compute.amazonaws.com",
+		"host": "ec2-63-34-120-149.eu-west-1.compute.amazonaws.com",
 		"database": "d281hj4hvq2ek6",
 		"password": "f01c6b53374cc5c207dbf125178d8d4e:60dd35f344fe554ef2f424f12733b72781419a01e30ed083223b62ea64cd56563ab2d122f768967dbae06651497f58b9c6685648cb54762a5d5fe1f2187b4d2223dd25f86216b7037426afd18528d14f",
 		"port": 5432,
